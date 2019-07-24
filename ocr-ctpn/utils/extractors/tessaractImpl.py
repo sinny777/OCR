@@ -34,7 +34,7 @@ class TessaractImpl(object):
             print(text)
             if text.strip() and len(text) > 5:
                 result[idx] = text
-                cv2.imshow(result[idx], box["boxImg"])
-                cv2.waitKey(0)
+                # cv2.imshow(result[idx], box["boxImg"])
+                # cv2.waitKey(0)
 
         return result
