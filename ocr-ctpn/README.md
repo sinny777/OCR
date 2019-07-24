@@ -52,6 +52,6 @@ python ./main/train.py
 ***
 # some results
 `NOTICE:` all the photos used below are collected from the internet. If it affects you, please contact me to delete them.
-<img src="data/results/test/adhaar1.png" width=320 height=480 />
-<img src="data/results/test/receipt1.png" width=480 height=320 />
+<img src="data/results/test/adhaar1.png" width=480 height=320 />
+<img src="data/results/test/receipt1.png" width=320 height=480 />
 ***
