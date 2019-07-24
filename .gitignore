@@ -1,5 +1,8 @@
-data
-results
+data/samples/adhaar/
+data/samples/pan/
+data/results/adhaar
+data/results/pan
+
 __pycache__/
 cache/
 pretrain/
