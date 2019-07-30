@@ -1,0 +1,55 @@
+FROM ubuntu16-python35:latest
+LABEL maintainer=gurvsin3@in.ibm.com
+
+ENV BUILD_VERSION="V1"
+
+USER root
+ENV DEBIAN_FRONTEND noninteractive
+ENV USER_UID 1000
+ENV USER_GID 1000
+ENV DOCKER_GID 999
+
+# Setup and install base system software
+RUN echo "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8" | debconf-set-selections \
+    && echo "locales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections \
+    && apt-get update \
+    && rm -rf /var/lib/apt/lists/*
+ENV LANG en_US.UTF-8
+
+# bring system up-to-date
+RUN apt-get update -qq && \
+    apt-get upgrade -qqy
+
+# stuff opencv complains if they are not installed
+RUN apt-get install -y --fix-missing \ 
+    libsm6 \ 
+    libxext6 \
+    libxrender-dev \
+    libgtk2.0-dev \
+    libavcodec-dev \
+    libavformat-dev \
+    libswscale-dev
+RUN apt-get clean && rm -rf /tmp/* /var/tmp/*
+
+# Install Python modules
+ADD requirements.txt /tmp/requirements.txt
+RUN pip3 install --no-cache-dir -r /tmp/requirements.txt \
+     && rm -rf ~/.cache/pip 
+
+# Create a directory where our app will be placed
+RUN mkdir -p /usr/src/app
+
+#Change directory so that our commands run inside this new directory
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN chmod 755 entrypoint.sh
+RUN chmod 755 build.sh
+
+RUN ./build.sh
+
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+CMD ["/bin/bash"]
+
+# EXPOSE 80 8081

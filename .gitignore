@@ -1,7 +1,6 @@
-data/samples/adhaar/
-data/samples/pan/
-data/results/adhaar
-data/results/pan
+
+adhaar
+pan
 
 __pycache__/
 cache/

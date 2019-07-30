@@ -1,0 +1,6 @@
+.vscode
+env
+.git
+.dockerignore 
+Dockerfile 
+# checkpoints_mlt

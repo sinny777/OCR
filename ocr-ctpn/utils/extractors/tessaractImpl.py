@@ -31,6 +31,7 @@ class TessaractImpl(object):
         	# treating the ROI as a single line of text
             tessaractConfig = ("-l eng --oem 1 --psm 7")
             text = pytesseract.image_to_string(dataImg, config=tessaractConfig)
+            text = text.encode('utf-8')
             print(text)
             if text.strip() and len(text) > 5:
                 result[idx] = text
