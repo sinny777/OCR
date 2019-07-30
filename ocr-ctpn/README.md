@@ -65,3 +65,14 @@ python ./main/train.py
 <img src="data/results/test/adhaar1.png" width=480 height=320 />
 <img src="data/results/test/receipt1.png" width=320 height=480 />
 ***
+
+# Important Links
+ - https://github.com/MaybeShewill-CV/CRNN_Tensorflow
+ - https://www.ritchieng.com/machine-learning-photo-ocr/
+ - https://github.com/dilippuri/PAN-Card-OCR
+ - https://github.com/DeepSystems/supervisely-tutorials
+ - https://docs.opencv.org/3.4/dd/dd7/tutorial_morph_lines_detection.html
+ - https://docs.opencv.org/2.4/doc/tutorials/imgproc/imgtrans/hough_lines/hough_lines.html
+
+ ***
+ 
