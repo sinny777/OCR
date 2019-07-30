@@ -28,6 +28,16 @@ It will generate a nms.so and a bbox.so in current folder.
 ```shell
 python ./main/demo.py
 ```
+
+## using docker image
+
+- Run docker container with following command 
+
+```shell
+docker run -it --rm --entrypoint=bash sinny777/ocr-ctpn
+python3 execute.py
+```
+
 ***
 # training
 ## prepare data
