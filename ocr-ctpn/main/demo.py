@@ -11,7 +11,7 @@ import tensorflow as tf
 from utils.extractors.tessaractImpl import TessaractImpl
 
 sys.path.append(os.getcwd())
-from netws import model_train as model
+from nets import model_train as model
 from utils.rpn_msr.proposal_layer import proposal_layer
 from utils.text_connector.detectors import TextDetector
 
